@@ -1,12 +1,11 @@
 import streamlit as st
 
-def cabecalho():
-    st.markdown("""
-        <h2 style="text-align: center; color: black;">
-            EXCESSO DE CONFIANÇA GERENCIAL E DESEMPENHO:uma análise das empresas de capital aberto do Brasil
-        </h2>
-        <hr style="border-top: 2px solid #bbb;">
-    """, unsafe_allow_html=True)
+st.markdown("""
+     <h2 style="text-align: center; color: black;">
+         EXCESSO DE CONFIANÇA GERENCIAL E DESEMPENHO:uma análise das empresas de capital aberto do Brasil
+     </h2>
+    <hr style="border-top: 2px solid #bbb;">
+""", unsafe_allow_html=True)
 
 cabecalho()
     
