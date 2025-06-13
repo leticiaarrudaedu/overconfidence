@@ -21,6 +21,7 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 #
+#
 st.markdown("""
 #### 📊 Mensuração do Excesso de Confiança Gerencial e do Desempenho
 As variáveis descritas no quadro abaixo representam proxies usadas para medir o **Excesso de Confiança Gerencial** em diferentes aspectos de decisões financeiras.
