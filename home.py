@@ -20,9 +20,8 @@ st.markdown("""
     A dissertação completa pode ser consultada no repositório de produções intelectuais do Mestrado Profissional em Administração do Instituto Federal de Minas Gerais – Campus Formiga, disponível em: <a href="https://www.formiga.ifmg.edu.br/mestrado-profissional-em-administracao/producoes-intelectuais" target="_blank">https://www.formiga.ifmg.edu.br/mestrado-profissional-em-administracao/producoes-intelectuais</a>.
 </div>
 """, unsafe_allow_html=True)
-
+#
 st.markdown("""
-
 #### 📊 Mensuração do Excesso de Confiança Gerencial e do Desempenho
 As variáveis descritas no quadro abaixo representam proxies usadas para medir o **Excesso de Confiança Gerencial** em diferentes aspectos de decisões financeiras.
 """)
