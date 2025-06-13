@@ -6,7 +6,6 @@ st.markdown("""
     </h2>
 """, unsafe_allow_html=True)
 
-# Conteúdo principal
 st.markdown("""
     <h4 style="color: black;">
         📚 Sobre o aplicativo
@@ -22,8 +21,9 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
+# substitua '#' isolado por '<br>' para evitar erros de sintaxe
 st.markdown("""
-#
+<br>
 #### 📊 Mensuração do Excesso de Confiança Gerencial e do Desempenho
 As variáveis descritas no quadro abaixo representam proxies usadas para medir o **Excesso de Confiança Gerencial** em diferentes aspectos de decisões financeiras.
 """)
