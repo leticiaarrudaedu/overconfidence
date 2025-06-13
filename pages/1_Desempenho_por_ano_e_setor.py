@@ -10,8 +10,8 @@ st.write("Utilize os filtros no menu lateral para selecionar os parâmetros e vi
 # === Filtros no Sidebar teste3 ===
 st.sidebar.header("🔎 Filtros Personalizados")
 
-# Escolha da variável para filtrar (oc1, oc2, oc3, oc4)
-coluna_filtro = st.sidebar.selectbox("Escolha a variável de filtro:", ['oc1', 'oc2', 'oc3', 'oc4'])
+# Escolha da variável para filtrar (oc1, oc2, oc3, oc4, oc134, oc234)
+coluna_filtro = st.sidebar.selectbox("Escolha a variável de filtro:", ['oc1', 'oc2', 'oc3', 'oc4', 'oc134', 'oc234')
 
 # Valores únicos da variável selecionada
 opcoes = sorted(df[coluna_filtro].dropna().unique())
