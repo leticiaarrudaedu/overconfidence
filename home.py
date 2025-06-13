@@ -5,7 +5,7 @@ st.markdown("""
         EXCESSO DE CONFIANÇA GERENCIAL E DESEMPENHO: uma análise das empresas de capital aberto do Brasil
     </h2>
 """, unsafe_allow_html=True)
- 
+#
 # Conteúdo principal
 st.markdown("""
     <h4 style="color: black;">
