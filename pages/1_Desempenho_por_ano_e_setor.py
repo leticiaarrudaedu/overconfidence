@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-df = pd.read_excel("dados_r.xlsx")
+df = pd.read_excel("dados.xlsx")
 
 st.write("Utilize os filtros no menu lateral para selecionar os parâmetros e visualizar os dados conforme sua preferência.")
 
