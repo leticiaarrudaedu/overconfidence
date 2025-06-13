@@ -6,9 +6,7 @@ st.markdown("""
      </h2>
     <hr style="border-top: 2px solid #bbb;">
 """, unsafe_allow_html=True)
-
-cabecalho()
-    
+ 
 # Conteúdo principal
 st.markdown("""
     <h4 style="color: black;">
