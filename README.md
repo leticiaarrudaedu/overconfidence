@@ -6,7 +6,7 @@ A dissertação foi elaborada pela discente Letícia Carla Arruda Janacaro, como
 
 A dissertação completa pode ser consultada no repositório de produções intelectuais do Mestrado Profissional em Administração do Instituto Federal de Minas Gerais – Campus Formiga, disponível em: https://www.formiga.ifmg.edu.br/mestrado-profissional-em-administracao/producoes-intelectuais.
 
-**Acesse o aplicativo:** https://overconfidence.streamlit.app/ 
+**Aplicativo:** https://overconfidence.streamlit.app/ 
 
 A partir deste repositório, um aplicativo interativo foi desenvolvido em Streamlit com o objetivo de facilitar a análise das informações relativas ao excesso de confiança gerencial e ao desempenho das empresas de capital aberto do Brasil, listadas na B3. Ele permite que os usuários explorem dados de forma dinâmica, visualizando relações entre variáveis, resíduos de regressões, indicadores de desempenho e níveis de governança corporativa.
 
