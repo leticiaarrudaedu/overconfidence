@@ -60,4 +60,4 @@ st.markdown("""
 | Margem Operacional| Lucro operacional dividido pelas vendas.                                                                          |
 """)
 
-Para acessar o repositório no GitHub ou baixar os dados completos, acesse: https://github.com/leticiaarrudaedu/overconfidence 
+st.markdown("Para acessar o repositório no GitHub ou baixar os dados completos, acesse: [https://github.com/leticiaarrudaedu/overconfidence](https://github.com/leticiaarrudaedu/overconfidence)")
