@@ -22,7 +22,6 @@ As variáveis descritas no quadro abaixo representam proxies usadas para medir o
 
 As variáveis listadas a seguir representam diferentes indicadores financeiros utilizados para avaliar o **desempenho** das empresas.
 
-st.markdown("""
 | Variável          | Descrição                                                                                                         |
 |-------------------|-------------------------------------------------------------------------------------------------------------------|
 | Q de Tobin        | A soma do valor de mercado das ações e do valor de mercado das dívidas, dividido pelo valor de reposição dos ativos, no final do ano t. |
