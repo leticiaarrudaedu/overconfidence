@@ -7,6 +7,10 @@ A dissertação foi elaborada pela discente Letícia Carla Arruda Janacaro, como
 A dissertação completa pode ser consultada no repositório de produções intelectuais do Mestrado Profissional em Administração do Instituto Federal de Minas Gerais – Campus Formiga, disponível em: https://www.formiga.ifmg.edu.br/mestrado-profissional-em-administracao/producoes-intelectuais.
 
 **Acesse o aplicativo:** https://overconfidence.streamlit.app/ 
+A partir deste repositório, um aplicativo interativo foi desenvolvido em Streamlit com o objetivo de facilitar a análise das informações relativas ao excesso de confiança gerencial e ao desempenho das empresas de capital aberto do Brasil, listadas na B3. Ele permite que os usuários explorem dados de forma dinâmica, visualizando relações entre variáveis, resíduos de regressões, indicadores de desempenho e níveis de governança corporativa.
+A interface oferece filtros por ano, setor econômico e diferentes classificações de grupos, possibilitando análises segmentadas e detalhadas. Além disso, o aplicativo gera gráficos e visualizações que auxiliam na compreensão dos padrões de crescimento, desempenho e eficiência empresarial.
+O aplicativo também promove a ciência aberta, disponibilizando a base de dados utilizada, permitindo que usuários realizem suas próprias análises, reproduzam os resultados ou desenvolvam pesquisas complementares.
+
 
 #### 📊 Mensuração do Excesso de Confiança Gerencial e do Desempenho
 As variáveis descritas no quadro abaixo representam proxies usadas para medir o **Excesso de Confiança Gerencial** em diferentes aspectos de decisões financeiras.
