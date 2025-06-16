@@ -8,9 +8,8 @@ A dissertação completa pode ser consultada no repositório de produções inte
 
 #### 📊 Mensuração do Excesso de Confiança Gerencial e do Desempenho
 As variáveis descritas no quadro abaixo representam proxies usadas para medir o **Excesso de Confiança Gerencial** em diferentes aspectos de decisões financeiras.
-""")
 
-st.markdown("""
+
 | Variável | Medida                                | Tipo                           | Método de Medição                                                                                                                                    |
 |----------|----------------------------------------|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
 | oc1      | CAPEX                                  | Decisões de investimento       | Se os gastos de capital da empresa, quando escalados pelos ativos do ano anterior, excedem a mediana da indústria naquele ano (1); caso contrário, 0. |
@@ -19,11 +18,9 @@ st.markdown("""
 | oc4      | DIVYLD (Rendimento de dividendos)      | Decisões de financiamento      | O rendimento de dividendos é igual aos dividendos por ação dividido pelo preço da ação. Assume 1 se o rendimento for zero, e 0 caso contrário.      |
 | oc134    | *                                      | Decisões de investimento e financiamento | Índice composto pelas proxies oc1, oc3 e oc4.                                                                                                   |
 | oc234    | *                                      | Decisões de investimento e financiamento | Índice composto pelas proxies oc2, oc3 e oc4.                                                                                                   |
-""")
 
-st.markdown("""
+
 As variáveis listadas a seguir representam diferentes indicadores financeiros utilizados para avaliar o **desempenho** das empresas.
-""")
 
 st.markdown("""
 | Variável          | Descrição                                                                                                         |
@@ -33,4 +30,4 @@ st.markdown("""
 | ROA               | Desempenho da empresa medido pelo retorno sobre ativos, no final do ano t.                                        |
 | ROAEBIT           | Retorno sobre ativos antes de juros e impostos, calculado como lucro operacional dividido pelos ativos totais, no final do ano t. |
 | Margem Operacional| Lucro operacional dividido pelas vendas.                                                                          |
-""")
+
