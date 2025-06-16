@@ -53,5 +53,10 @@ if variavel_desempenho in df_filtrado.columns:
     ax3.legend(title=coluna_filtro.upper())
     plt.tight_layout()
     st.pyplot(fig3)
+    
+ # Tabela dos dados filtrados, logo abaixo do gráfico
+    st.subheader("📋 Dados Filtrados")
+    st.dataframe(df_filtrado)
+
 else:
     st.warning(f"⚠️ A coluna '{variavel_desempenho}' não está disponível no DataFrame.")
