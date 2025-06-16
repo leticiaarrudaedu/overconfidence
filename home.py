@@ -59,3 +59,5 @@ st.markdown("""
 | ROAEBIT           | Retorno sobre ativos antes de juros e impostos, calculado como lucro operacional dividido pelos ativos totais, no final do ano t. |
 | Margem Operacional| Lucro operacional dividido pelas vendas.                                                                          |
 """)
+
+Para acessar o repositório no GitHub ou baixar os dados completos, acesse: https://github.com/leticiaarrudaedu/overconfidence 
