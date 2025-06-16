@@ -33,20 +33,20 @@ As variáveis listadas a seguir representam diferentes indicadores financeiros u
 | Margem Operacional| Lucro operacional dividido pelas vendas.                                                                          |
 
 #### ✅ Finalidades dos itens do repositório:
-.devcontainer/
+*.devcontainer/*
 Armazena arquivos de configuração para ambientes de desenvolvimento em containers (ex.: GitHub Codespaces ou VSCode Dev Containers).
 
-pages/
+*pages/*
 Contém os scripts Python que representam as diferentes páginas do aplicativo Streamlit.
 
-README.md
+*README.md*
 Documento de apresentação do projeto, com informações sobre o objetivo, instalação, uso e detalhes importantes.
 
-dados.xlsx
+*dados.xlsx*
 Arquivo com a base de dados utilizada pelo aplicativo, disponibilizado para download. Pode ser utilizado livremente pelos usuários para realizar análises, replicar os resultados ou desenvolver novas pesquisas, promovendo a ciência aberta.
 
-home.py
+*home.py*
 Script responsável por definir a página inicial do app no Streamlit, servindo como ponto de entrada para os usuários.
 
-requirements.txt
+*requirements.txt*
 Arquivo que lista todas as bibliotecas e dependências necessárias para rodar o projeto Python.
