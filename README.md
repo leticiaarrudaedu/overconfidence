@@ -6,6 +6,9 @@ A dissertação foi elaborada pela discente Letícia Carla Arruda Janacaro, como
 
 A dissertação completa pode ser consultada no repositório de produções intelectuais do Mestrado Profissional em Administração do Instituto Federal de Minas Gerais – Campus Formiga, disponível em: https://www.formiga.ifmg.edu.br/mestrado-profissional-em-administracao/producoes-intelectuais.
 
+#### Acesse o aplicativo: 
+https://overconfidence.streamlit.app/ 
+
 #### 📊 Mensuração do Excesso de Confiança Gerencial e do Desempenho
 As variáveis descritas no quadro abaixo representam proxies usadas para medir o **Excesso de Confiança Gerencial** em diferentes aspectos de decisões financeiras.
 
@@ -30,3 +33,21 @@ As variáveis listadas a seguir representam diferentes indicadores financeiros u
 | ROAEBIT           | Retorno sobre ativos antes de juros e impostos, calculado como lucro operacional dividido pelos ativos totais, no final do ano t. |
 | Margem Operacional| Lucro operacional dividido pelas vendas.                                                                          |
 
+#### ✅ Finalidades dos itens do repositório:
+.devcontainer/
+Armazena arquivos de configuração para ambientes de desenvolvimento em containers (ex.: GitHub Codespaces ou VSCode Dev Containers).
+
+pages/
+Contém os scripts Python que representam as diferentes páginas do aplicativo Streamlit.
+
+README.md
+Documento de apresentação do projeto, com informações sobre o objetivo, instalação, uso e detalhes importantes.
+
+dados.xlsx
+Arquivo com a base de dados utilizada pelo aplicativo, disponibilizado para download. Pode ser utilizado livremente pelos usuários para realizar análises, replicar os resultados ou desenvolver novas pesquisas, promovendo a ciência aberta.
+
+home.py
+Script responsável por definir a página inicial do app no Streamlit, servindo como ponto de entrada para os usuários.
+
+requirements.txt
+Arquivo que lista todas as bibliotecas e dependências necessárias para rodar o projeto Python.
