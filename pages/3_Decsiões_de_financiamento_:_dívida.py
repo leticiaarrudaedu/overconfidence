@@ -116,4 +116,7 @@ with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
 
 st.download_button(
     label="Baixar dados em Excel",
-    data=output.getvalue
+    data=output.getvalue(),
+    file_name="empresas_oc3_filtradas.xlsx",
+    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+)
