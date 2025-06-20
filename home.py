@@ -94,85 +94,84 @@ with tab1:
 
 with tab2:
     st.markdown("""
-        <div class="card">
-            <h4>📊 Mensuração do Excesso de Confiança Gerencial</h4>
-            <p>As variáveis abaixo representam proxies usadas para medir o <strong>Excesso de Confiança Gerencial</strong>:</p>
-            
-            <table>
-            <tr>
-                <th>Variável</th>
-                <th>Medida</th>
-                <th>Tipo</th>
-                <th>Método de Medição</th>
-            </tr>
-            <tr>
-                <td>oc1</td>
-                <td>CAPEX</td>
-                <td>Decisões de investimento</td>
-                <td>Se os gastos de capital da empresa, escalados pelos ativos do ano anterior, excedem a mediana da indústria (1); caso contrário, 0.</td>
-            </tr>
-            <tr>
-                <td>oc2</td>
-                <td>Excesso de investimento</td>
-                <td>Decisões de investimento</td>
-                <td>Se o resíduo da regressão do crescimento total de ativos sobre o crescimento de vendas for maior que zero (1); caso contrário, 0.</td>
-            </tr>
-            <tr>
-                <td>oc3</td>
-                <td>Dívida / Valor de mercado</td>
-                <td>Decisões de financiamento</td>
-                <td>Soma da dívida de longo e curto prazo dividido pelo valor de mercado. Assume 1 se superar a mediana da indústria; caso contrário, 0.</td>
-            </tr>
-            <tr>
-                <td>oc4</td>
-                <td>DIVYLD (Rendimento de dividendos)</td>
-                <td>Decisões de financiamento</td>
-                <td>Rendimento de dividendos igual aos dividendos por ação dividido pelo preço da ação. Assume 1 se for zero; caso contrário, 0.</td>
-            </tr>
-            <tr>
-                <td>oc134</td>
-                <td>*</td>
-                <td>Investimento e financiamento</td>
-                <td>Índice composto pelas proxies oc1, oc3 e oc4.</td>
-            </tr>
-            <tr>
-                <td>oc234</td>
-                <td>*</td>
-                <td>Investimento e financiamento</td>
-                <td>Índice composto pelas proxies oc2, oc3 e oc4.</td>
-            </tr>
-            </table>
-        </div>
+    <div style="
+        background-color: #F9FAFB;
+        border: 1px solid #D1D5DB;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+    ">
 
-        <div class="card">
-            <h4>💼 Indicadores de Desempenho</h4>
-            <table>
-            <tr>
-                <th>Variável</th>
-                <th>Descrição</th>
-            </tr>
-            <tr>
-                <td>Q de Tobin</td>
-                <td>Valor de mercado das ações + dívidas dividido pelo valor de reposição dos ativos.</td>
-            </tr>
-            <tr>
-                <td>ROE</td>
-                <td>Lucro líquido dividido pelo patrimônio líquido.</td>
-            </tr>
-            <tr>
-                <td>ROA</td>
-                <td>Retorno sobre ativos no final do ano t.</td>
-            </tr>
-            <tr>
-                <td>ROAEBIT</td>
-                <td>Retorno sobre ativos antes de juros e impostos.</td>
-            </tr>
-            <tr>
-                <td>Margem Operacional</td>
-                <td>Lucro operacional dividido pelas vendas.</td>
-            </tr>
-            </table>
-        </div>
+    <h4 style="color: #1F2937; margin-top: 0;">📊 Mensuração do Excesso de Confiança Gerencial</h4>
+
+    <p style="text-align: justify;">
+    As variáveis abaixo representam proxies usadas para medir o <strong>Excesso de Confiança Gerencial</strong>:
+    </p>
+
+    <table style="width:100%; border-collapse: collapse;">
+      <tr style="background-color: #3B82F6; color: white;">
+        <th style="padding: 8px; border: 1px solid #ccc;">Variável</th>
+        <th style="padding: 8px; border: 1px solid #ccc;">Medida</th>
+        <th style="padding: 8px; border: 1px solid #ccc;">Tipo</th>
+        <th style="padding: 8px; border: 1px solid #ccc;">Método de Medição</th>
+      </tr>
+
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ccc;">oc1</td>
+        <td style="padding: 8px; border: 1px solid #ccc;">CAPEX</td>
+        <td style="padding: 8px; border: 1px solid #ccc;">Decisões de investimento</td>
+        <td style="padding: 8px; border: 1px solid #ccc;">
+        Se os gastos de capital da empresa, escalados pelos ativos do ano anterior, excedem a mediana da indústria (1); caso contrário, 0.
+        </td>
+      </tr>
+
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ccc;">oc2</td>
+        <td style="padding: 8px; border: 1px solid #ccc;">Excesso de investimento</td>
+        <td style="padding: 8px; border: 1px solid #ccc;">Decisões de investimento</td>
+        <td style="padding: 8px; border: 1px solid #ccc;">
+        Se o resíduo da regressão do crescimento total de ativos sobre o crescimento de vendas for maior que zero (1); caso contrário, 0.
+        </td>
+      </tr>
+
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ccc;">oc3</td>
+        <td style="padding: 8px; border: 1px solid #ccc;">Dívida / Valor de mercado</td>
+        <td style="padding: 8px; border: 1px solid #ccc;">Decisões de financiamento</td>
+        <td style="padding: 8px; border: 1px solid #ccc;">
+        Soma da dívida de longo e curto prazo dividido pelo valor de mercado. Assume 1 se superar a mediana da indústria; caso contrário, 0.
+        </td>
+      </tr>
+
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ccc;">oc4</td>
+        <td style="padding: 8px; border: 1px solid #ccc;">DIVYLD (Rendimento de dividendos)</td>
+        <td style="padding: 8px; border: 1px solid #ccc;">Decisões de financiamento</td>
+        <td style="padding: 8px; border: 1px solid #ccc;">
+        Rendimento de dividendos igual aos dividendos por ação dividido pelo preço da ação. Assume 1 se for zero; caso contrário, 0.
+        </td>
+      </tr>
+
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ccc;">oc134</td>
+        <td style="padding: 8px; border: 1px solid #ccc;">*</td>
+        <td style="padding: 8px; border: 1px solid #ccc;">Investimento e financiamento</td>
+        <td style="padding: 8px; border: 1px solid #ccc;">
+        Índice composto pelas proxies oc1, oc3 e oc4.
+        </td>
+      </tr>
+
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ccc;">oc234</td>
+        <td style="padding: 8px; border: 1px solid #ccc;">*</td>
+        <td style="padding: 8px; border: 1px solid #ccc;">Investimento e financiamento</td>
+        <td style="padding: 8px; border: 1px solid #ccc;">
+        Índice composto pelas proxies oc2, oc3 e oc4.
+        </td>
+      </tr>
+
+    </table>
+    </div>
     """, unsafe_allow_html=True)
 
 with tab3:
