@@ -150,6 +150,7 @@ with tab2:
     st.markdown("""
     <div class="card">
         <h4>💼 Indicadores de Desempenho</h4>
+        <p>As variáveis listadas a seguir representam diferentes indicadores financeiros utilizados para avaliar o <strong>desempenho</strong> das empresas:</p>
         <table>
             <tr>
                 <th>Variável</th>
