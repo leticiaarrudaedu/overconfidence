@@ -3,11 +3,18 @@ import streamlit as st
 # ====== Estilo CSS personalizado ======
 st.markdown("""
     <style>
-        body {
-    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
-    color: #1F2937;
-    font-family: 'Inter', sans-serif;
-}
+        /* Fundo gradiente para a área principal */
+        .main {
+            background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        /* Mantém o texto e fonte */
+        .main, body {
+            color: #1F2937;
+            font-family: 'Inter', sans-serif;
+        }
         .card {
             background-color: white;
             padding: 20px;
