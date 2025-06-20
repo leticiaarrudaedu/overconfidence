@@ -142,6 +142,37 @@ with tab2:
     </table>
 """, unsafe_allow_html=True)
 
+ <div class="card">
+            <h4>💼 Indicadores de Desempenho</h4>
+            <table>
+            <tr>
+                <th>Variável</th>
+                <th>Descrição</th>
+            </tr>
+            <tr>
+                <td>Q de Tobin</td>
+                <td>Valor de mercado das ações + dívidas dividido pelo valor de reposição dos ativos.</td>
+            </tr>
+            <tr>
+                <td>ROE</td>
+                <td>Lucro líquido dividido pelo patrimônio líquido.</td>
+            </tr>
+            <tr>
+                <td>ROA</td>
+                <td>Retorno sobre ativos no final do ano t.</td>
+            </tr>
+            <tr>
+                <td>ROAEBIT</td>
+                <td>Retorno sobre ativos antes de juros e impostos.</td>
+            </tr>
+            <tr>
+                <td>Margem Operacional</td>
+                <td>Lucro operacional dividido pelas vendas.</td>
+            </tr>
+            </table>
+        </div>
+    """, unsafe_allow_html=True) 
+
 with tab3:
     st.markdown("""
         <div class="card">
