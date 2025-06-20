@@ -53,7 +53,6 @@ df_filtrado = df[
     (df['oc3'] == 1)
 ]
 
-#contagem por setor no ano selecionado
 contagem_por_setor = df_filtrado.groupby('setor').size().reset_index(name='quantidade')
 contagem_por_setor = contagem_por_setor.sort_values('quantidade', ascending=False)
 
@@ -83,18 +82,18 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.subheader("10 Empresas com Maior Excesso de Confiança (divev_dif)")
-    st.dataframe(top_10_maior_conf[['ano', 'setor', 'ticker', 'divev_dif']], use_container_width=True)
+    st.dataframe(top_10_maior_conf[['ano', 'setor', 'ticker', 'divev_dif']].reset_index(drop=True), use_container_width=True)
 
 with col2:
     st.subheader("10 Empresas com Menor Excesso de Confiança (divev_dif)")
-    st.dataframe(top_10_menor_conf[['ano', 'setor', 'ticker', 'divev_dif']], use_container_width=True)
+    st.dataframe(top_10_menor_conf[['ano', 'setor', 'ticker', 'divev_dif']].reset_index(drop=True), use_container_width=True)
 
 # Tabela com detalhes das empresas
 colunas_exibir = ['ano', 'setor', 'ticker', 'oc3'] + variaveis_desempenho
 df_exibir = df_filtrado[colunas_exibir].copy()
 
 st.subheader("Dados das Empresas Selecionadas")
-st.dataframe(df_exibir, use_container_width=True)
+st.dataframe(df_exibir.reset_index(drop=True), use_container_width=True)
 
 # Exportar para Excel
 output = io.BytesIO()
@@ -103,7 +102,3 @@ with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
 
 st.download_button(
     label="📥 Baixar dados em Excel",
-    data=output.getvalue(),
-    file_name="empresas_oc3_filtradas.xlsx",
-    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-)
