@@ -46,5 +46,9 @@ if not dfmqo.empty:
 
     st.pyplot(fig)
 
+# ✔️ Dados filtrados abaixo do gráfico
+st.subheader("📋 Dados Filtrados")
+st.dataframe(dfmqo.reset_index(drop=True))
+
 else:
     st.warning(f"Não há dados disponíveis para o setor '{setor_dados}' no ano {ano}.")
