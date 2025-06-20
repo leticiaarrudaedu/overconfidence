@@ -5,7 +5,9 @@ import seaborn as sns
 
 df = pd.read_excel("dados.xlsx")
 
-st.write("Utilize os filtros no menu lateral para selecionar os parâmetros e visualizar os dados conforme sua preferência.")
+st.write("Utilize os filtros no menu lateral para selecionar os parâmetros e visualizar a comparação de desempenho entre empresas classificadas com excesso de confiança gerencial e aquelas sem o viés.”.")
+st.write(Grupo 0 = sem Excesso de Confiança Gerencial)
+st.write(Grupo 1 = com Excesso de confiança Gerencial)
 
 # === Filtros no Sidebar teste3 ===
 st.sidebar.header("🔎 Filtros Personalizados")
