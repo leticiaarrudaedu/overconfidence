@@ -5,7 +5,7 @@ import io
 
 # Título
 st.title("Empresas por Ano, Setor, Tipo de OC e Desempenho")
-st.write("Tipos de OC: oc1, oc2, oc3, oc4, oc41, e variáveis financeiras")
+st.write("Tipos de OC: oc1, oc2, oc3, oc4, oc134, oc234 e variáveis financeiras")
 
 # Carregamento dos dados
 try:
@@ -14,8 +14,15 @@ except FileNotFoundError:
     st.error("Arquivo 'dados.xlsx' não encontrado.")
     st.stop()
 
+# Criar a variável divev_dif = divev - mediana_divev
+if 'divev' not in df.columns or 'mediana_divev' not in df.columns:
+    st.error("As colunas 'divev' e/ou 'mediana_divev' não estão presentes nos dados.")
+    st.stop()
+
+df['divev_dif'] = df['divev'] - df['mediana_divev']
+
 # Configurações
-tipos_oc = ['oc1', 'oc2', 'oc3', 'oc4', 'oc41']
+tipos_oc = ['oc1', 'oc2', 'oc3', 'oc4', 'oc134', 'oc234']
 variaveis_desempenho = ['wroa', 'wroaebit', 'wroe', 'wqtobin', 'wmgop', 'wopor', 'lnat', 'divbrat']
 setores_disponiveis = sorted(df['setor'].dropna().unique())
 
@@ -32,6 +39,16 @@ if not setores_selecionados or not tipos_oc_selecionados:
 df_filtrado = df[df['setor'].isin(setores_selecionados)]
 filtro_oc = df_filtrado[tipos_oc_selecionados].sum(axis=1) >= 1
 df_filtrado = df_filtrado[filtro_oc]
+
+# Mostrar top 10 empresas com maior e menor excesso de confiança (divev_dif)
+top_10_maior_conf = df_filtrado.sort_values('divev_dif', ascending=False).head(10)
+top_10_menor_conf = df_filtrado.sort_values('divev_dif', ascending=True).head(10)
+
+st.subheader("10 Empresas com Maior Excesso de Confiança (divev_dif)")
+st.dataframe(top_10_maior_conf[['ano', 'setor', 'ticker', 'divev_dif']], use_container_width=True)
+
+st.subheader("10 Empresas com Menor Excesso de Confiança (divev_dif)")
+st.dataframe(top_10_menor_conf[['ano', 'setor', 'ticker', 'divev_dif']], use_container_width=True)
 
 # Agrupamento por ano
 contagem_por_ano = df_filtrado.groupby('ano').size().reset_index(name='quantidade')
