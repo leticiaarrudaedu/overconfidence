@@ -71,18 +71,18 @@ top_10_menor_conf = df_filtrado.sort_values('divev_dif', ascending=True).head(10
 col1, col2 = st.columns(2)
 
 with col1:
-    st.subheader("10 Empresas com maior nível de Excesso de Confiança Gerencial")
+    st.subheader("Empresas com maior nível de Excesso de Confiança Gerencial")
     st.dataframe(top_10_maior_conf[['ano', 'setor', 'ticker', 'divev_dif']].reset_index(drop=True), use_container_width=True)
 
 with col2:
-    st.subheader("10 Empresas com menor nível de Excesso de Confiança Gerencial")
+    st.subheader("Empresas com menor nível de Excesso de Confiança Gerencial")
     st.dataframe(top_10_menor_conf[['ano', 'setor', 'ticker', 'divev_dif']].reset_index(drop=True), use_container_width=True)
 
 colunas_exibir = ['ano', 'setor', 'ticker', 'oc3'] + variaveis_desempenho
 df_exibir = df_filtrado[colunas_exibir].copy()
 
 st.subheader("📋 Dados Filtrados")
-st.dataframe(df_exibir.reset_index(drop=True), use_container_width=True)
+st.dataframe(df_exibir.reset_index(drop=True), use_container_width=True, height=600)
 
 output = io.BytesIO()
 with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
