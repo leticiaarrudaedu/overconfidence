@@ -4,10 +4,10 @@ import streamlit as st
 st.markdown("""
     <style>
         body {
-            background-color: #F9FAFB;
-            color: #1F2937;
-            font-family: 'Inter', sans-serif;
-        }
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    color: #1F2937;
+    font-family: 'Inter', sans-serif;
+}
         .card {
             background-color: white;
             padding: 20px;
