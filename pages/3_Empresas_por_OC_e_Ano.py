@@ -102,3 +102,4 @@ with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
 
 st.download_button(
     label="📥 Baixar dados em Excel",
+    data=output.getvalue(),
