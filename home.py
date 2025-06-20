@@ -94,56 +94,53 @@ with tab1:
 
 with tab2:
     st.markdown("""
-        <div class="card">
-            <h4>📊 Mensuração do Excesso de Confiança Gerencial</h4>
-            <p>As variáveis abaixo representam proxies usadas para medir o <strong>Excesso de Confiança Gerencial</strong>:</p>
-            
-            <table>
-                <tr>
-                    <th>Variável</th>
-                    <th>Medida</th>
-                    <th>Tipo</th>
-                    <th>Método de Medição</th>
-                </tr>
-                <tr>
-                    <td>oc1</td>
-                    <td>CAPEX</td>
-                    <td>Decisões de investimento</td>
-                    <td>Se os gastos de capital da empresa, escalados pelos ativos do ano anterior, excedem a mediana da indústria (1); caso contrário, 0.</td>
-                </tr>
-                <tr>
-                    <td>oc2</td>
-                    <td>Excesso de investimento</td>
-                    <td>Decisões de investimento</td>
-                    <td>Se o resíduo da regressão do crescimento total de ativos sobre o crescimento de vendas for maior que zero (1); caso contrário, 0.</td>
-                </tr>
-                <tr>
-                    <td>oc3</td>
-                    <td>Dívida / Valor de mercado</td>
-                    <td>Decisões de financiamento</td>
-                    <td>Soma da dívida de longo e curto prazo dividido pelo valor de mercado. Assume 1 se superar a mediana da indústria; caso contrário, 0.</td>
-                </tr>
-                <tr>
-                    <td>oc4</td>
-                    <td>DIVYLD (Rendimento de dividendos)</td>
-                    <td>Decisões de financiamento</td>
-                    <td>Rendimento de dividendos igual aos dividendos por ação dividido pelo preço da ação. Assume 1 se for zero; caso contrário, 0.</td>
-                </tr>
-                <tr>
-                    <td>oc134</td>
-                    <td>*</td>
-                    <td>Investimento e financiamento</td>
-                    <td>Índice composto pelas proxies oc1, oc3 e oc4.</td>
-                </tr>
-                <tr>
-                    <td>oc234</td>
-                    <td>*</td>
-                    <td>Investimento e financiamento</td>
-                    <td>Índice composto pelas proxies oc2, oc3 e oc4.</td>
-                </tr>
-            </table>
-        </div>
-    """, unsafe_allow_html=True)
+    <h4>📊 Mensuração do Excesso de Confiança Gerencial</h4>
+    <p>As variáveis abaixo representam proxies usadas para medir o <strong>Excesso de Confiança Gerencial</strong>:</p>
+    <table>
+        <tr>
+            <th>Variável</th>
+            <th>Medida</th>
+            <th>Tipo</th>
+            <th>Método de Medição</th>
+        </tr>
+        <tr>
+            <td>oc1</td>
+            <td>CAPEX</td>
+            <td>Decisões de investimento</td>
+            <td>Se os gastos de capital da empresa, escalados pelos ativos do ano anterior, excedem a mediana da indústria (1); caso contrário, 0.</td>
+        </tr>
+        <tr>
+            <td>oc2</td>
+            <td>Excesso de investimento</td>
+            <td>Decisões de investimento</td>
+            <td>Se o resíduo da regressão do crescimento total de ativos sobre o crescimento de vendas for maior que zero (1); caso contrário, 0.</td>
+        </tr>
+        <tr>
+            <td>oc3</td>
+            <td>Dívida / Valor de mercado</td>
+            <td>Decisões de financiamento</td>
+            <td>Soma da dívida de longo e curto prazo dividido pelo valor de mercado. Assume 1 se superar a mediana da indústria; caso contrário, 0.</td>
+        </tr>
+        <tr>
+            <td>oc4</td>
+            <td>DIVYLD (Rendimento de dividendos)</td>
+            <td>Decisões de financiamento</td>
+            <td>Rendimento de dividendos igual aos dividendos por ação dividido pelo preço da ação. Assume 1 se for zero; caso contrário, 0.</td>
+        </tr>
+        <tr>
+            <td>oc134</td>
+            <td>*</td>
+            <td>Investimento e financiamento</td>
+            <td>Índice composto pelas proxies oc1, oc3 e oc4.</td>
+        </tr>
+        <tr>
+            <td>oc234</td>
+            <td>*</td>
+            <td>Investimento e financiamento</td>
+            <td>Índice composto pelas proxies oc2, oc3 e oc4.</td>
+        </tr>
+    </table>
+""", unsafe_allow_html=True)
 
 with tab3:
     st.markdown("""
