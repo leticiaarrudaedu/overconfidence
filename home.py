@@ -3,12 +3,12 @@ import streamlit as st
 # ====== Estilo CSS personalizado ======
 st.markdown("""
     <style>
-        /* Fundo gradiente para a área principal */
-        .main {
-            background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+        body, .css-18e3th9, .main {
+            background: linear-gradient(135deg, #f0f4f8, #d9e2ec) !important;
             min-height: 100vh;
-            padding: 2rem;
         }
+    </style>
+""", unsafe_allow_html=True)
 
         /* Mantém o texto e fonte */
         .main, body {
