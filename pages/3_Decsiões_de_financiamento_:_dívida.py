@@ -99,14 +99,14 @@ top_10_menor_conf = df_filtrado.sort_values('divev_dif', ascending=True).head(10
 col1, col2 = st.columns(2)
 
 with col1:
-    st.subheader("10 Empresas com Maior Nível de Excesso de Confiança")
+    st.subheader("Empresas com Maior Nível de Excesso de Confiança")
     st.dataframe(
         top_10_maior_conf[['ano', 'setor', 'ticker', 'divev_dif']].reset_index(drop=True),
         use_container_width=True
     )
 
 with col2:
-    st.subheader("10 Empresas com Menor Nível de Excesso de Confiança")
+    st.subheader("Empresas com Menor Nível de Excesso de Confiança")
     st.dataframe(
         top_10_menor_conf[['ano', 'setor', 'ticker', 'divev_dif']].reset_index(drop=True),
         use_container_width=True
