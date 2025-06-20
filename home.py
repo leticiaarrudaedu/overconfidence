@@ -142,9 +142,10 @@ with tab2:
     </table>
 """, unsafe_allow_html=True)
 
- <div class="card">
-            <h4>💼 Indicadores de Desempenho</h4>
-            <table>
+st.markdown("""
+    <div class="card">
+        <h4>💼 Indicadores de Desempenho</h4>
+        <table>
             <tr>
                 <th>Variável</th>
                 <th>Descrição</th>
@@ -169,8 +170,8 @@ with tab2:
                 <td>Margem Operacional</td>
                 <td>Lucro operacional dividido pelas vendas.</td>
             </tr>
-            </table>
-        </div>
+        </table>
+    </div>
     """, unsafe_allow_html=True) 
 
 with tab3:
