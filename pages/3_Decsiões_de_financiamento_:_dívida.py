@@ -5,7 +5,6 @@ import io
 
 st.title("Empresas excessivamente confiantes por Ano e Setor ")
 st.write("Análise usando a proxie oc3 (dívida / valor de mercado), que atua na dimensão das decisões de financiamento das organizações.")
-st.write("divev_dif = nível de endividamento em relação à mediana dos setor.")
 
 try:
     df = pd.read_excel("dados.xlsx")
@@ -66,45 +65,28 @@ else:
     fig.update_layout(yaxis={'categoryorder':'total ascending'}, margin=dict(l=150, r=40, t=50, b=40))
     st.plotly_chart(fig, use_container_width=True)
 
-# Preparar top 10 maior excesso de confiança (decrescente)
-top_10_maior_conf = df_filtrado.sort_values('divev_dif', ascending=False).head(10).copy()
-top_10_maior_conf.insert(0, '#', range(1, len(top_10_maior_conf) + 1))
-
-# Preparar top 10 menor excesso de confiança (crescente)
-top_10_menor_conf = df_filtrado.sort_values('divev_dif', ascending=True).head(10).copy()
-top_10_menor_conf.insert(0, '#', range(1, len(top_10_menor_conf) + 1))
+top_10_maior_conf = df_filtrado.sort_values('divev_dif', ascending=False).head(10)
+top_10_menor_conf = df_filtrado.sort_values('divev_dif', ascending=True).head(10)
 
 col1, col2 = st.columns(2)
 
 with col1:
     st.subheader("10 Empresas com maior nível de Excesso de Confiança Gerencial")
     st.dataframe(
-        top_10_maior_conf[['#', 'ano', 'setor', 'ticker', 'divev_dif']].reset_index(drop=True),
+        top_10_maior_conf[['ano', 'setor', 'ticker', 'divev_dif']].reset_index(drop=True).style.hide(axis='index'),
         use_container_width=True
     )
 
 with col2:
     st.subheader("10 Empresas com menor nível de Excesso de Confiança Gerencial")
     st.dataframe(
-        top_10_menor_conf[['#', 'ano', 'setor', 'ticker', 'divev_dif']].reset_index(drop=True),
+        top_10_menor_conf[['ano', 'setor', 'ticker', 'divev_dif']].reset_index(drop=True).style.hide(axis='index'),
         use_container_width=True
     )
 
-# Tabela completa com todos os dados filtrados e numeração iniciando em 1
 colunas_exibir = ['ano', 'setor', 'ticker', 'oc3'] + variaveis_desempenho
 df_exibir = df_filtrado[colunas_exibir].copy()
-df_exibir.insert(0, '#', range(1, len(df_exibir) + 1))
 
 st.subheader("📋 Dados Filtrados")
-st.dataframe(df_exibir.reset_index(drop=True), use_container_width=True, height=600)
-
-output = io.BytesIO()
-with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
-    df_exibir.to_excel(writer, index=False, sheet_name='Empresas')
-
-st.download_button(
-    label="📥 Baixar dados em Excel",
-    data=output.getvalue(),
-    file_name="empresas_oc3_filtradas.xlsx",
-    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-)
+st.dataframe(
+    df_exibir.reset_index(drop=True).style.hide(axis='in
