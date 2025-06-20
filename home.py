@@ -140,9 +140,9 @@ with tab2:
             <td>Índice composto pelas proxies oc2, oc3 e oc4.</td>
         </tr>
     </table>
-""", unsafe_allow_html=True)
+    """ , unsafe_allow_html=True)
 
-st.markdown("""
+    st.markdown("""
     <div class="card">
         <h4>💼 Indicadores de Desempenho</h4>
         <table>
@@ -172,7 +172,7 @@ st.markdown("""
             </tr>
         </table>
     </div>
-    """, unsafe_allow_html=True) 
+    """, unsafe_allow_html=True)
 
 with tab3:
     st.markdown("""
