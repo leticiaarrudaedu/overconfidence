@@ -100,6 +100,7 @@ with tab2:
             <p style='text-align: justify;'>
                 O excesso de confiança gerencial ocorre no contexto corporativo e é caracterizado pela manifestação da superestimação, superposição ou excesso de precisão, conforme previsto e aceito pela literatura da área (Malmendier & Tate, 2005b; Moore & Healy, 2008; M. Zavertiaeva et al., 2018), adicionando o locus gerencial de interação. Para a formulação deste conceito, assume-se que as decisões organizacionais podem ser tomadas por diferentes gestores, em diferentes níveis hierárquicos e potencialmente construída por diversos atores. Devido a inespecificidade do tomador de decisão, ao contrário do que ocorre com o excesso de confiança do CEO, e à diversidade potencial de tomadores de decisão, as decisões refletem melhor as características da empresa. Essas características são sinalizadas por sua gestão, conjunto de gestores, independentemente de seus níveis hierárquicos, que figura incluindo os aspectos endógenos aos indivíduos, como o viés, e aspectos exógenos, como a cultura corporativa e as regras de confiança, esta última, conforme relatado por (Cheng et al., 2021).
             </p>
+            <p style='text-align: right; font-size: 12px; color: #555;'>Fonte: elaborado pela autora, 2025.</p>
         </div>
     """, unsafe_allow_html=True)
 
