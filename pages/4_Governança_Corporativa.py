@@ -124,7 +124,7 @@ fig.update_layout(
 st.plotly_chart(fig, use_container_width=True)
 
 # Mostrar tabela filtrada depois do gráfico
-st.subheader("Dados das Empresas Filtradas")
+st.subheader("📋 Dados representados no gráfico")
 
 st.dataframe(df_nivel, use_container_width=True)
 
