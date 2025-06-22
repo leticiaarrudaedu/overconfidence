@@ -5,6 +5,9 @@ import seaborn as sns
 
 df = pd.read_excel("dados.xlsx")
 
+# Título
+st.title("Excesso de Confiança Gerencial e Desempenho")
+
 st.write("Utilize os filtros no menu lateral para selecionar os parâmetros e visualizar a comparação de desempenho entre empresas classificadas com excesso de confiança gerencial e aquelas sem o viés.")
 st.markdown("""
 **Grupo 0:** Sem Excesso de Confiança Gerencial  
