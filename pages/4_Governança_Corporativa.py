@@ -20,7 +20,7 @@ df.columns = df.columns.str.lower()
 niveis_governanca = ['n1', 'n2', 'nm']
 variaveis_oc = ['oc1', 'oc2', 'oc3', 'oc4', 'oc134', 'oc234']
 
-# Anos
+# Anos disponíveis e opção "Todos os anos"
 anos_disponiveis = sorted(df['ano'].dropna().unique())
 anos_opcoes = ["Todos os anos"] + list(anos_disponiveis)
 
@@ -32,7 +32,7 @@ niveis_selecionados = st.sidebar.multiselect(
 )
 
 anos_selecionados = st.sidebar.multiselect(
-    "Anos:", anos_opcoes, default="Todos os anos"
+    "Anos:", anos_opcoes, default=["Todos os anos"]
 )
 
 oc_selecionados = st.sidebar.multiselect(
@@ -44,19 +44,18 @@ if not niveis_selecionados:
     st.warning("Selecione pelo menos um nível de governança.")
     st.stop()
 
-# Filtragem por ano (não filtrar se for "Todos os anos")
+# Filtragem por ano (não filtrar se "Todos os anos" estiver selecionado)
 df_base = df.copy()
-
 if "Todos os anos" not in anos_selecionados and anos_selecionados:
     df_base = df_base[df_base['ano'].isin(anos_selecionados)]
 
-# Construção dos dados para o gráfico
+# Preparar dados para o gráfico
 dados_grafico = []
-
 for nivel in niveis_selecionados:
-    df_nivel = df_base[df_base[nivel] == 1]  # Filtrar empresas daquele nível
+    df_nivel = df_base[df_base[nivel] == 1]  # empresas daquele nível
+    anos_nivel = sorted(df_nivel['ano'].dropna().unique())
 
-    for ano in sorted(df_nivel['ano'].dropna().unique()):
+    for ano in anos_nivel:
         df_ano = df_nivel[df_nivel['ano'] == ano]
 
         total_empresas = df_ano.shape[0]
@@ -77,12 +76,24 @@ for nivel in niveis_selecionados:
 
 grafico_df = pd.DataFrame(dados_grafico)
 
-# Gráfico Interativo
+# Definir cores sóbrias
+cores_niveis = {
+    'N1': '#4B4B4B',   # Cinza Escuro
+    'N2': '#2F4F4F',   # Azul Petróleo
+    'NM': '#556B2F'    # Verde Musgo
+}
+
+cores_linhas = {
+    'N1': '#4B4B4B',   # Cinza Escuro
+    'N2': '#2F4F4F',   # Azul Petróleo
+    'NM': '#556B2F'    # Verde Musgo
+}
+
+# Construção do gráfico
 st.subheader("Evolução: Governança e Excesso de Confiança por Ano")
 
 fig = go.Figure()
 
-# Adicionar barras e linhas por nível de governança
 for nivel in grafico_df['Nível'].unique():
     dados_nivel = grafico_df[grafico_df['Nível'] == nivel]
 
@@ -91,7 +102,7 @@ for nivel in grafico_df['Nível'].unique():
         x=dados_nivel['Ano'].astype(str),
         y=dados_nivel['Total Empresas'],
         name=f'{nivel} - Total',
-        marker_color='rgba(0, 123, 255, 0.7)',
+        marker_color=cores_niveis.get(nivel, '#4B4B4B'),
         hovertemplate='Ano: %{x}<br>Nível: '+nivel+'<br>Total de Empresas: %{y}<extra></extra>'
     ))
 
@@ -101,8 +112,8 @@ for nivel in grafico_df['Nível'].unique():
         y=dados_nivel['Empresas com OC'],
         name=f'{nivel} - Com OC',
         mode='lines+markers',
-        line=dict(color='crimson', width=3, shape='spline'),
-        marker=dict(size=8, color='crimson'),
+        line=dict(color=cores_linhas.get(nivel, '#4B4B4B'), width=3, shape='spline'),
+        marker=dict(size=8, color=cores_linhas.get(nivel, '#4B4B4B')),
         hovertemplate='Ano: %{x}<br>Nível: '+nivel+'<br>Empresas com OC: %{y}<extra></extra>'
     ))
 
@@ -133,9 +144,8 @@ st.plotly_chart(fig, use_container_width=True)
 
 # Tabela dos Dados Filtrados
 st.subheader("Dados das Empresas Filtradas")
-df_tabela = df_base[
-    (df_base[niveis_selecionados].sum(axis=1) >= 1)
-]
+
+df_tabela = df_base[df_base[niveis_selecionados].sum(axis=1) >= 1]
 st.dataframe(df_tabela, use_container_width=True)
 
 # Download da tabela
