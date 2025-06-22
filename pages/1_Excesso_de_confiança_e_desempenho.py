@@ -22,7 +22,7 @@ st.markdown("""
 # === Filtros no Sidebar ===
 st.sidebar.header("🔎 Filtros Personalizados")
 
-# Filtro de variável de grupo (oc1, oc2, oc3, etc.)
+# Filtro de variável de grupo
 coluna_filtro = st.sidebar.selectbox(
     "Escolha a variável de filtro:", 
     ['oc1', 'oc2', 'oc3', 'oc4', 'oc134', 'oc234']
@@ -42,24 +42,36 @@ variavel_desempenho = st.sidebar.selectbox(
     ['wqtobin', 'wroa', 'wroaebit', 'wroe', 'wmgop']
 )
 
-# Filtro por ano
-anos = st.sidebar.multiselect(
-    "Selecione os anos:", 
-    sorted(df['ano'].unique()), 
-    default=sorted(df['ano'].unique())
-)
+# === Filtro por ano ===
+st.sidebar.subheader("Filtro por Ano")
+todos_anos = st.sidebar.checkbox("Selecionar Todos os Anos", value=True)
 
-# Filtro por setor
-setores = st.sidebar.multiselect(
-    "Selecione os setores:", 
-    sorted(df['setor'].unique()), 
-    default=sorted(df['setor'].unique())
-)
+if todos_anos:
+    anos = sorted(df['ano'].unique())
+else:
+    anos = st.sidebar.multiselect(
+        "Selecione os anos:", 
+        sorted(df['ano'].unique()), 
+        default=sorted(df['ano'].unique())
+    )
+
+# === Filtro por setor ===
+st.sidebar.subheader("Filtro por Setor")
+todos_setores = st.sidebar.checkbox("Selecionar Todos os Setores", value=True)
+
+if todos_setores:
+    setores = sorted(df['setor'].unique())
+else:
+    setores = st.sidebar.multiselect(
+        "Selecione os setores:", 
+        sorted(df['setor'].unique()), 
+        default=sorted(df['setor'].unique())
+    )
 
 # === Aplicar filtros ===
 df_filtrado = df[
-    (df[coluna_filtro].isin(valores_selecionados)) &
-    (df['ano'].isin(anos)) &
+    (df[coluna_filtro].isin(valores_selecionados)) & 
+    (df['ano'].isin(anos)) & 
     (df['setor'].isin(setores))
 ]
 
