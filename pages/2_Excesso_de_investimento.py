@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
+import io
 
 # Evita warnings do Streamlit com matplotlib
 import warnings
@@ -62,7 +63,6 @@ if not dfmqo.empty:
         file_name="dados_agrupados.xlsx",
         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     )
-
 
 else:
     st.warning(f"Não há dados disponíveis para o setor '{setor_dados}' no ano {ano}.")
