@@ -2,9 +2,10 @@ import streamlit as st
 import pandas as pd
 import io
 import plotly.graph_objects as go
+import plotly.express as px
 
 # Título
-st.title("Empresas por Nível de Governança Corporativa, Ano e Excesso de Confiança Gerencial")
+st.title("Análise de Governança Corporativa e Excesso de Confiança Gerencial")
 
 # Carregamento dos dados
 try:
@@ -13,73 +14,80 @@ except FileNotFoundError:
     st.error("Arquivo 'dados.xlsx' não encontrado.")
     st.stop()
 
-# Garantir nomes em minúsculo para evitar erros
+# Colunas minúsculas
 df.columns = df.columns.str.lower()
 
-# Definir colunas de governança e de excesso de confiança
+# Definir variáveis
 niveis_governanca = ['n1', 'n2', 'nm']
 variaveis_oc = ['oc1', 'oc2', 'oc3', 'oc4', 'oc134', 'oc234']
 
-# Anos disponíveis
+# Anos
 anos_disponiveis = sorted(df['ano'].dropna().unique())
+anos_opcoes = ["Todos os anos"] + list(anos_disponiveis)
 
-# Filtros interativos
-st.sidebar.header("Filtros")
+# Sidebar de filtros
+st.sidebar.header("🔍 Filtros")
 
 niveis_selecionados = st.sidebar.multiselect(
-    "Selecione os níveis de governança:", niveis_governanca
+    "Níveis de governança:", niveis_governanca
 )
 
 anos_selecionados = st.sidebar.multiselect(
-    "Selecione os anos:", anos_disponiveis
+    "Anos:", anos_opcoes, default="Todos os anos"
 )
 
 oc_selecionados = st.sidebar.multiselect(
-    "Selecione as variáveis de Excesso de Confiança Gerencial (opcional):", variaveis_oc
+    "Excesso de Confiança Gerencial (OC):", variaveis_oc
 )
 
 # Validação
 if not niveis_selecionados:
-    st.warning("Selecione pelo menos um nível de governança.")
+    st.warning("⚠️ Selecione pelo menos um nível de governança.")
     st.stop()
 
 # Filtragem
 df_filtrado = df.copy()
 
-if anos_selecionados:
+# Filtro de ano
+if "Todos os anos" not in anos_selecionados and anos_selecionados:
     df_filtrado = df_filtrado[df_filtrado['ano'].isin(anos_selecionados)]
 
 # Filtrar por nível de governança
 filtro_nivel = df_filtrado[niveis_selecionados].sum(axis=1) >= 1
 df_filtrado = df_filtrado[filtro_nivel]
 
-# Se filtrar por excesso de confiança
+# Filtrar por OC se selecionado
 if oc_selecionados:
     filtro_oc = df_filtrado[oc_selecionados].sum(axis=1) >= 1
     df_filtrado = df_filtrado[filtro_oc]
 
-# Verificar se há dados
+# Validação de dados
 if df_filtrado.empty:
-    st.warning("Nenhum dado encontrado para os filtros selecionados.")
+    st.warning("⚠️ Nenhum dado encontrado para os filtros selecionados.")
 else:
-    # 📊 Geração do gráfico 
-    st.subheader("📊 Comparativo: Governança vs. Excesso de Confiança")
 
-    # Dados para o gráfico
+    # Gráfico
+    st.subheader("📊 Evolução Anual: Governança e Excesso de Confiança")
+
     grafico_dados = []
 
-    for nivel in niveis_selecionados:
-        total_empresas = df_filtrado[df_filtrado[nivel] == 1].shape[0]
+    for ano in sorted(df_filtrado['ano'].unique()):
+        dados_ano = df_filtrado[df_filtrado['ano'] == ano]
+
+        total_empresas = dados_ano[
+            dados_ano[niveis_selecionados].sum(axis=1) >= 1
+        ].shape[0]
+
         if oc_selecionados:
-            empresas_com_oc = df_filtrado[
-                (df_filtrado[nivel] == 1) &
-                (df_filtrado[oc_selecionados].sum(axis=1) >= 1)
+            empresas_com_oc = dados_ano[
+                (dados_ano[niveis_selecionados].sum(axis=1) >= 1) &
+                (dados_ano[oc_selecionados].sum(axis=1) >= 1)
             ].shape[0]
         else:
-            empresas_com_oc = 0  # Nenhuma variável de OC selecionada
+            empresas_com_oc = 0
 
         grafico_dados.append({
-            'Nível': nivel.upper(),
+            'Ano': ano,
             'Total Empresas': total_empresas,
             'Empresas com OC': empresas_com_oc
         })
@@ -90,38 +98,53 @@ else:
 
     # Barras - Total de empresas
     fig.add_trace(go.Bar(
-        x=grafico_df['Nível'],
+        x=grafico_df['Ano'].astype(str),
         y=grafico_df['Total Empresas'],
         name='Total de Empresas',
-        marker_color='lightskyblue'
+        marker_color='rgba(0, 123, 255, 0.8)',
+        hovertemplate='Ano: %{x}<br>Total de Empresas: %{y}<extra></extra>'
     ))
 
-    # Linha - Empresas com Excesso de Confiança
+    # Linha - Empresas com OC
     fig.add_trace(go.Scatter(
-        x=grafico_df['Nível'],
+        x=grafico_df['Ano'].astype(str),
         y=grafico_df['Empresas com OC'],
         name='Empresas com OC',
         mode='lines+markers',
-        marker=dict(size=8, color='firebrick'),
-        line=dict(width=2, color='firebrick')
+        line=dict(color='crimson', width=3, shape='spline'),
+        marker=dict(size=8, color='crimson'),
+        hovertemplate='Ano: %{x}<br>Empresas com OC: %{y}<extra></extra>'
     ))
 
     fig.update_layout(
-        title="Número de Empresas por Nível de Governança e Excesso de Confiança",
-        xaxis_title="Nível de Governança",
+        title="📈 Número de Empresas por Ano e Excesso de Confiança",
+        xaxis_title="Ano",
         yaxis_title="Número de Empresas",
-        bargap=0.4,
-        template="simple_white"
+        template="plotly_white",
+        bargap=0.3,
+        hovermode="x unified",
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="center",
+            x=0.5,
+            bgcolor='rgba(0,0,0,0)',
+            bordercolor='rgba(0,0,0,0)'
+        ),
+        xaxis=dict(showgrid=True, gridcolor='rgba(200,200,200,0.3)'),
+        yaxis=dict(showgrid=True, gridcolor='rgba(200,200,200,0.3)'),
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)'
     )
 
     st.plotly_chart(fig, use_container_width=True)
 
- 
-    # 📑 Exibição da tabela
+    # 📑 Exibição da Tabela
     st.subheader("📑 Dados das Empresas Filtradas")
     st.dataframe(df_filtrado, use_container_width=True)
 
-    # Download dos dados
+    # Exportar dados
     output = io.BytesIO()
     with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
         df_filtrado.to_excel(writer, index=False, sheet_name='Empresas')
