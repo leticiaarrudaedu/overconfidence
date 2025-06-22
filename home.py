@@ -93,7 +93,7 @@ with tab1:
         </div>
     """, unsafe_allow_html=True)
 
-with tab_conceito:
+with tab_2:
     st.markdown("""
         <div class="card">
             <h4>📝 Conceito: Excesso de Confiança Gerencial</h4>
@@ -105,7 +105,7 @@ with tab_conceito:
         </div>
     """, unsafe_allow_html=True)
 
-with tab2:
+with tab3:
     st.markdown("""
         <div class="card">
         <h4>📊 Mensuração do Excesso de Confiança Gerencial</h4>
@@ -154,7 +154,8 @@ with tab2:
                 <td>Índice composto pelas proxies oc2, oc3 e oc4.</td>
             </tr>
         </table>
-    """ , unsafe_allow_html=True)
+        </div>
+    """, unsafe_allow_html=True)
 
     st.markdown("""
     <div class="card">
@@ -173,5 +174,17 @@ with tab2:
                 <td>ROE</td>
                 <td>Lucro líquido dividido pelo patrimônio líquido.</td>
             </tr>
-            <tr>
-               
+        </table>
+    </div>
+    """, unsafe_allow_html=True)
+
+with tab4:
+    st.markdown("""
+        <div class="card">
+            <h4>📥 Dados</h4>
+            <p style='text-align: justify;'>
+                Aqui você pode fazer upload dos dados utilizados para análise ou acessar datasets públicos relacionados ao tema.
+            </p>
+            <!-- Você pode incluir componentes Streamlit para upload ou download aqui -->
+        </div>
+    """, unsafe_allow_html=True)
