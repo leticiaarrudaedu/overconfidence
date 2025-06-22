@@ -74,7 +74,7 @@ for ano in anos_para_grafico:
 grafico_df = pd.DataFrame(dados_grafico)
 
 # Construção do gráfico com azul e vermelho
-st.subheader(f"Evolução: {nivel_selecionado.upper()} - Governança e Excesso de Confiança")
+st.subheader(f"Evolução: {nivel_selecionado.upper()}")
 
 fig = go.Figure()
 
