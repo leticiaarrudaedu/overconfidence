@@ -115,7 +115,7 @@ with col2:
 st.divider()
 
 # --- Dados Filtrados
-st.subheader("Dados Filtrados")
+st.subheader("📋 Dados representados no gráfico")
 
 colunas_exibir = ['ano', 'setor', 'ticker', 'oc3'] + variaveis_desempenho
 df_exibir = df_filtrado[colunas_exibir].copy()
