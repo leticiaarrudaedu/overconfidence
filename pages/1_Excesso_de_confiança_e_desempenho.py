@@ -65,5 +65,17 @@ if variavel_desempenho in df_filtrado.columns:
     st.subheader("📋 Dados Filtrados")
     st.dataframe(df_filtrado)
 
+# Download Excel
+output = io.BytesIO()
+with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
+    df_nivel.to_excel(writer, index=False, sheet_name='Empresas')
+
+st.download_button(
+    label="Baixar dados em Excel",
+    data=output.getvalue(),
+    file_name=f"empresas_filtradas_{nivel_selecionado}.xlsx",
+    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+)
+
 else:
     st.warning(f"⚠️ A coluna '{variavel_desempenho}' não está disponível no DataFrame.")
