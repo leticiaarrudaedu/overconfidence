@@ -75,7 +75,6 @@ st.markdown("""
 st.markdown("""
      <h2 style="text-align: center;">EXCESSO DE CONFIANÇA GERENCIAL E DESEMPENHO</h2>
      <h4 style="text-align: center;">Uma análise das empresas de capital aberto do Brasil</h4>
-      <hr>
 </div>
 """, unsafe_allow_html=True)
 
