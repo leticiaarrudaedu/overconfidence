@@ -134,7 +134,7 @@ with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
     df_nivel.to_excel(writer, index=False, sheet_name='Empresas')
 
 st.download_button(
-    label="Baixar dados filtrados em Excel",
+    label="Baixar dados em Excel",
     data=output.getvalue(),
     file_name=f"empresas_filtradas_{nivel_selecionado}.xlsx",
     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
