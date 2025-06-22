@@ -9,7 +9,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 # Título do app
-st.title("📈 Análise de Crescimento dos Ativos vs. Resíduos")
+st.title("Excesso de investimento: Análise de Crescimento dos Ativos vs. Resíduos")
 st.write("Excesso de investimento (oc2): Gráfico de Crescimento dos Ativos em relação aos Resíduos da Regressão MQO por Setor e Ano")
 
 # Carregar os dados do Excel diretamente
@@ -46,8 +46,8 @@ if not dfmqo.empty:
 
     st.pyplot(fig)
 
-    # ✔️ Dados filtrados abaixo do gráfico
-    st.subheader("📋 Dados Filtrados")
+    # Dados filtrados abaixo do gráfico
+    st.subheader("📋 Dados representados no gráfico")
     st.dataframe(dfmqo.reset_index(drop=True))
 
 else:
