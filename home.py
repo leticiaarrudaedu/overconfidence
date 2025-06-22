@@ -96,7 +96,7 @@ with tab1:
 with tab_conceito:
     st.markdown("""
         <div class="card">
-            <h4>📖 Conceito: Excesso de Confiança Gerencial</h4>
+            <h4>📝 Conceito: Excesso de Confiança Gerencial</h4>
             <p style='text-align: justify;'>
                 O excesso de confiança gerencial ocorre no contexto corporativo e é caracterizado pela manifestação da <strong>superestimação</strong>, <strong>superposição</strong> ou <strong>excesso de precisão</strong>, conforme previsto e aceito pela literatura da área (Malmendier & Tate, 2005b; Moore & Healy, 2008; M. Zavertiaeva et al., 2018), adicionando o <strong>locus gerencial de interação</strong>.<br><br>
                 Para a formulação deste conceito, assume-se que as decisões organizacionais podem ser tomadas por diferentes gestores, em diferentes níveis hierárquicos e potencialmente construída por diversos atores. Devido à <strong>inespecificidade do tomador de decisão</strong>, ao contrário do que ocorre com o excesso de confiança do CEO, e à <strong>diversidade potencial de tomadores de decisão</strong>, as decisões refletem melhor as características da empresa.<br><br>
@@ -174,3 +174,4 @@ with tab2:
                 <td>Lucro líquido dividido pelo patrimônio líquido.</td>
             </tr>
             <tr>
+               
