@@ -44,7 +44,7 @@ variavel_desempenho = st.sidebar.selectbox(
 
 # === Filtro por ano ===
 anos_unicos = sorted(df['ano'].dropna().unique())
-anos_opcoes = ["Todos"] + anos_unicos
+anos_opcoes = ["Selecionar todos"] + anos_unicos
 
 anos_selecionados = st.sidebar.multiselect(
     "Selecione os anos:", 
@@ -60,7 +60,7 @@ else:
 
 # === Filtro por setor ===
 setores_unicos = sorted(df['setor'].dropna().unique())
-setores_opcoes = ["Todos"] + setores_unicos
+setores_opcoes = ["Selecionar todos"] + setores_unicos
 
 setores_selecionados = st.sidebar.multiselect(
     "Selecione os setores:", 
