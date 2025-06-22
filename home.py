@@ -86,7 +86,7 @@ with tab1:
             <h4>📚 Sobre o aplicativo</h4>
             <p style='text-align: justify;'>
                 Este aplicativo apresenta um produto técnico desenvolvido a partir da dissertação de mestrado profissional em Administração no Instituto Federal de Minas Gerais – Campus Formiga.<br><br>
-                A pesquisa, intitulada <strong>"EXCESSO DE CONFIANÇA GERENCIAL E DESEMPENHO FINANCEIRO: uma análise das empresas de capital aberto do Brasil"</strong>, integra a linha de Finanças Comportamentais e Tomada de Decisão do Programa de Pós-Graduação em Administração.<br><br>
+                A pesquisa, intitulada <strong>"EXCESSO DE CONFIANÇA GERENCIAL E DESEMPENHO: uma análise das empresas de capital aberto do Brasil"</strong>, integra a linha de Finanças Comportamentais e Tomada de Decisão do Programa de Pós-Graduação em Administração.<br><br>
                 A dissertação foi elaborada pela discente Letícia Carla Arruda Janacaro, como parte das exigências para obtenção do título de Mestre, sob orientação do Prof. Dr. Bruno César de Melo Moreira e coorientação do Prof. Dr. Lélis Pedro de Andrade.<br><br>
                 🔗 <a href="https://www.formiga.ifmg.edu.br/mestrado-profissional-em-administracao/producoes-intelectuais" target="_blank">Acesse a dissertação completa no repositório do IFMG</a>.
             </p>
