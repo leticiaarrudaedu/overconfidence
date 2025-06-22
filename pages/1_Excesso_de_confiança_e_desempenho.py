@@ -43,36 +43,42 @@ variavel_desempenho = st.sidebar.selectbox(
 )
 
 # === Filtro por ano ===
-st.sidebar.subheader("Filtro por Ano")
-todos_anos = st.sidebar.checkbox("Selecionar Todos os Anos", value=True)
+anos_unicos = sorted(df['ano'].dropna().unique())
+anos_opcoes = ["Todos"] + anos_unicos
 
-if todos_anos:
-    anos = sorted(df['ano'].unique())
+anos_selecionados = st.sidebar.multiselect(
+    "Selecione os anos:", 
+    anos_opcoes, 
+    default=["Todos"]
+)
+
+if "Todos" in anos_selecionados:
+    anos_filtrados = anos_unicos
 else:
-    anos = st.sidebar.multiselect(
-        "Selecione os anos:", 
-        sorted(df['ano'].unique()), 
-        default=sorted(df['ano'].unique())
-    )
+    anos_filtrados = anos_selecionados
+
 
 # === Filtro por setor ===
-st.sidebar.subheader("Filtro por Setor")
-todos_setores = st.sidebar.checkbox("Selecionar Todos os Setores", value=True)
+setores_unicos = sorted(df['setor'].dropna().unique())
+setores_opcoes = ["Todos"] + setores_unicos
 
-if todos_setores:
-    setores = sorted(df['setor'].unique())
+setores_selecionados = st.sidebar.multiselect(
+    "Selecione os setores:", 
+    setores_opcoes, 
+    default=["Todos"]
+)
+
+if "Todos" in setores_selecionados:
+    setores_filtrados = setores_unicos
 else:
-    setores = st.sidebar.multiselect(
-        "Selecione os setores:", 
-        sorted(df['setor'].unique()), 
-        default=sorted(df['setor'].unique())
-    )
+    setores_filtrados = setores_selecionados
+
 
 # === Aplicar filtros ===
 df_filtrado = df[
     (df[coluna_filtro].isin(valores_selecionados)) & 
-    (df['ano'].isin(anos)) & 
-    (df['setor'].isin(setores))
+    (df['ano'].isin(anos_filtrados)) & 
+    (df['setor'].isin(setores_filtrados))
 ]
 
 # === Verificar e gerar gráfico ===
