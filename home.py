@@ -75,11 +75,10 @@ st.markdown("""
 st.markdown("""
      <h2 style="text-align: center;">EXCESSO DE CONFIANÇA GERENCIAL E DESEMPENHO</h2>
      <h4 style="text-align: center;">Uma análise das empresas de capital aberto do Brasil</h4>
-</div>
 """, unsafe_allow_html=True)
 
 # ====== Conteúdo organizado em abas ======
-tab1, tab2, tab3 = st.tabs(["📖 Sobre", "📊 Métricas", "📥 Dados"])
+tab1, tab_conceito, tab2, tab3 = st.tabs(["📖 Sobre", "📘 Conceito", "📊 Métricas", "📥 Dados"])
 
 with tab1:
     st.markdown("""
@@ -90,6 +89,18 @@ with tab1:
                 A pesquisa, intitulada <strong>"EXCESSO DE CONFIANÇA GERENCIAL E DESEMPENHO FINANCEIRO: uma análise das empresas de capital aberto do Brasil"</strong>, integra a linha de Finanças Comportamentais e Tomada de Decisão do Programa de Pós-Graduação em Administração.<br><br>
                 A dissertação foi elaborada pela discente Letícia Carla Arruda Janacaro, como parte das exigências para obtenção do título de Mestre, sob orientação do Prof. Dr. Bruno César de Melo Moreira e coorientação do Prof. Dr. Lélis Pedro de Andrade.<br><br>
                 🔗 <a href="https://www.formiga.ifmg.edu.br/mestrado-profissional-em-administracao/producoes-intelectuais" target="_blank">Acesse a dissertação completa no repositório do IFMG</a>.
+            </p>
+        </div>
+    """, unsafe_allow_html=True)
+
+with tab_conceito:
+    st.markdown("""
+        <div class="card">
+            <h4>📖 Conceito: Excesso de Confiança Gerencial</h4>
+            <p style='text-align: justify;'>
+                O excesso de confiança gerencial ocorre no contexto corporativo e é caracterizado pela manifestação da <strong>superestimação</strong>, <strong>superposição</strong> ou <strong>excesso de precisão</strong>, conforme previsto e aceito pela literatura da área (Malmendier & Tate, 2005b; Moore & Healy, 2008; M. Zavertiaeva et al., 2018), adicionando o <strong>locus gerencial de interação</strong>.<br><br>
+                Para a formulação deste conceito, assume-se que as decisões organizacionais podem ser tomadas por diferentes gestores, em diferentes níveis hierárquicos e potencialmente construída por diversos atores. Devido à <strong>inespecificidade do tomador de decisão</strong>, ao contrário do que ocorre com o excesso de confiança do CEO, e à <strong>diversidade potencial de tomadores de decisão</strong>, as decisões refletem melhor as características da empresa.<br><br>
+                Essas características são sinalizadas por sua gestão, <strong>conjunto de gestores, independentemente de seus níveis hierárquicos</strong>, que figura incluindo os <strong>aspectos endógenos</strong> aos indivíduos, como o viés, e <strong>aspectos exógenos</strong>, como a cultura corporativa e as regras de confiança, esta última, conforme relatado por (Cheng et al., 2021).
             </p>
         </div>
     """, unsafe_allow_html=True)
@@ -163,26 +174,3 @@ with tab2:
                 <td>Lucro líquido dividido pelo patrimônio líquido.</td>
             </tr>
             <tr>
-                <td>ROA</td>
-                <td>Retorno sobre ativos no final do ano t.</td>
-            </tr>
-            <tr>
-                <td>ROAEBIT</td>
-                <td>Retorno sobre ativos antes de juros e impostos.</td>
-            </tr>
-            <tr>
-                <td>Margem Operacional</td>
-                <td>Lucro operacional dividido pelas vendas.</td>
-            </tr>
-        </table>
-    </div>
-    """, unsafe_allow_html=True)
-
-with tab3:
-    st.markdown("""
-        <div class="card">
-            <h4>📥 Acesso aos dados e repositório</h4>
-            <p>Para acessar o repositório no GitHub ou baixar os dados completos, clique no link abaixo:</p>
-            🔗 <a href="https://github.com/leticiaarrudaedu/overconfidence" target="_blank">Repositório no GitHub</a>
-        </div>
-    """, unsafe_allow_html=True)
