@@ -66,18 +66,16 @@ if variavel_desempenho in df_filtrado.columns:
     st.subheader("📋 Dados representados no gráfico")
     st.dataframe(df_filtrado, use_container_width=True)
 
- # Criar arquivo Excel em memória para download
-    buffer = io.BytesIO()
-    with pd.ExcelWriter(buffer, engine='xlsxwriter') as writer:
-        df_filtrado.to_excel(writer, index=False, sheet_name='Dados Filtrados')
-        writer.save()
-    buffer.seek(0)
-
+    # Download Excel
+    output = io.BytesIO()
+    with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
+        df_filtrado.to_excel(writer, index=False, sheet_name='Dados_Filtrados')
+    
     st.download_button(
         label="📥 Baixar dados em Excel",
-        data=buffer,
-        file_name='dados_filtrados.xlsx',
-        mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        data=output.getvalue(),
+        file_name="dados_filtrados.xlsx",
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     )
 else:
     st.warning(f"⚠️ A coluna '{variavel_desempenho}' não está disponível no DataFrame.")
