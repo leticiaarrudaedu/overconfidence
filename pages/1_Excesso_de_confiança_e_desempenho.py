@@ -100,7 +100,7 @@ if variavel_desempenho in df_filtrado.columns:
     output.seek(0)
 
     st.download_button(
-        label="📥 Baixar dados em Excel",
+        label="Baixar dados em Excel",
         data=output.getvalue(),
         file_name="dados_filtrados.xlsx",
         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
