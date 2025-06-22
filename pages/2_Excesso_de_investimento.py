@@ -49,6 +49,20 @@ if not dfmqo.empty:
     # Dados filtrados abaixo do gráfico
     st.subheader("📋 Dados representados no gráfico")
     st.dataframe(dfmqo.reset_index(drop=True))
+    
+    # Download Excel dos dados agrupados (dfmqo)
+    output_mqo = io.BytesIO()
+    with pd.ExcelWriter(output_mqo, engine='xlsxwriter') as writer:
+        dfmqo.to_excel(writer, index=False, sheet_name='Dados_Agrupados')
+    output_mqo.seek(0)
+    
+    st.download_button(
+        label="Baixar dados em Excel",
+        data=output_mqo.getvalue(),
+        file_name="dados_agrupados.xlsx",
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    )
+
 
 else:
     st.warning(f"Não há dados disponíveis para o setor '{setor_dados}' no ano {ano}.")
