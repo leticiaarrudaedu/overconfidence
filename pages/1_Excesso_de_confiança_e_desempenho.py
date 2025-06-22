@@ -49,10 +49,10 @@ anos_opcoes = ["Selecionar todos"] + anos_unicos
 anos_selecionados = st.sidebar.multiselect(
     "Selecione os anos:", 
     anos_opcoes, 
-    default=["Todos"]
+    default=["Selecionar todos"]
 )
 
-if "Todos" in anos_selecionados:
+if "Selecionar todos" in anos_selecionados:
     anos_filtrados = anos_unicos
 else:
     anos_filtrados = anos_selecionados
@@ -65,10 +65,10 @@ setores_opcoes = ["Selecionar todos"] + setores_unicos
 setores_selecionados = st.sidebar.multiselect(
     "Selecione os setores:", 
     setores_opcoes, 
-    default=["Todos"]
+    default=["Selecionar todos"]
 )
 
-if "Todos" in setores_selecionados:
+if "Selecionar todos" in setores_selecionados:
     setores_filtrados = setores_unicos
 else:
     setores_filtrados = setores_selecionados
